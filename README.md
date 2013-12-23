@@ -10,10 +10,10 @@ A scrapy project for obtaining Scottish Government ebooks.
 
 # Instructions
 
-1. Clone the repository, cd into the repository, then cd into 'it_ebooks'.
+1. Clone the repository, cd into the repository.
 
-2. To get a copy of the it-books database in CSV format, issue the following command.
+2. To get a copy of the Scottish Government ebooks database in CSV format, issue the following command.
 
-   1. scrapy crawl it_ebooks -t csv -o output.csv
+   1. scrapy crawl list_books -t csv -o output.csv
 
 Patches welcome.
