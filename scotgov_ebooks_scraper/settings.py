@@ -14,3 +14,9 @@ NEWSPIDER_MODULE = 'scotgov_ebooks_scraper.spiders'
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 USER_AGENT = 'scotgov_ebooks_scraper (+http://www.example.com)'
 HTTPCACHE_ENABLED = True
+
+FEED_EXPORTERS = {
+    'csv': 'scotgov_ebooks_scraper.feed_exporter.CSVkwItemExporter'
+}
+
+EXPORT_FIELDS = ["Title", "Author", "Publication_Date", "ePub_link", "MOBI_link", "URL"]

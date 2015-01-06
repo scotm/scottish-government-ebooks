@@ -9,9 +9,9 @@ from scrapy.item import Item, Field
 class ScotgovEbooksScraperItem(Item):
     # define the fields for your item here like:
     # name = Field()
-    title = Field()
-    author = Field()
-    pub_date = Field()
-    url = Field()
-    epub_link = Field()
-    mobi_link = Field()
+    Title = Field()
+    Author = Field()
+    Publication_Date = Field()
+    URL = Field()
+    ePub_link = Field()
+    MOBI_link = Field()

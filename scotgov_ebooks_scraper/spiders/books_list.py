@@ -20,17 +20,17 @@ class BooksListSpider(CrawlSpider):
         hxs = HtmlXPathSelector(response)
         i = ScotgovEbooksScraperItem()
         #i['domain_id'] = hxs.select('//input[@id="sid"]/@value').extract()
-        i['title'] = hxs.select("//h1/text()").extract()[0]
-        i['author'] = hxs.select('//div[contains(@class,"field-name-field-author")]/div[@class="field-items"]/div/a/text()').extract()[0]
-        i['url'] = response.url
+        i['Title'] = hxs.select("//h1/text()").extract()[0].strip()
+        i['Author'] = hxs.select('//div[contains(@class,"field-name-field-author")]/div[@class="field-items"]/div/a/text()').extract()[0].strip()
+        i['URL'] = response.url.strip()
         pub_date = hxs.select('//div[contains(@class,"field-name-field-publication-date")]/div[@class="field-items"]/div/span/text()').extract()[0]
         try:
             pub_date = parser.parse(pub_date)
         except:
             pass
-        i['pub_date'] = pub_date
+        i['Publication_Date'] = pub_date
         epub = hxs.select('//a[contains(@href,".epub")]/@href').extract()
-        i['epub_link'] = epub[0] if epub else ''
+        i['ePub_link'] = epub[0] if epub else ''
         mobi = hxs.select('//a[contains(@href,".mobi")]/@href').extract()
-        i['mobi_link'] = mobi[0] if mobi else ''
+        i['MOBI_link'] = mobi[0] if mobi else ''
         return i
