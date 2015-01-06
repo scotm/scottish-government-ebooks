@@ -14,6 +14,6 @@ A scrapy project for obtaining Scottish Government ebooks.
 
 2. To get a copy of the Scottish Government ebooks database in CSV format, issue the following command.
 
-   1. scrapy crawl list_books -t csv -o output.csv
+   1. scrapy crawl books_list -t csv -o output.csv
 
 Patches welcome.
